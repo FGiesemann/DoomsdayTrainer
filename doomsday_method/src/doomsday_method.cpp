@@ -66,4 +66,13 @@ bool is_leap_year(int year) {
     }
 }
 
+bool is_doomsday(int day, int month, int year) {
+    int doomsday = get_doomsday_in_month(month, year);
+    int o = day - doomsday;
+    while (o < 0) {
+        o += 7;
+    }
+    return o % 7 == 0;
+}
+
 } // namespace doomsday

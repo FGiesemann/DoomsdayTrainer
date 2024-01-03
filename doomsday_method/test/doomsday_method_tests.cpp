@@ -75,3 +75,24 @@ TEST(DoomsdayMethod, Weekday) {
     EXPECT_EQ(3, doomsday::weekday( 7,  2, 1748));
     EXPECT_EQ(6, doomsday::weekday(12, 11, 2163));
 }
+
+TEST(DoomsdayMethod, IsDoomsday) {
+    EXPECT_TRUE(doomsday::is_doomsday( 3, 1, 1985));
+    EXPECT_TRUE(doomsday::is_doomsday(10, 1, 1986));
+    EXPECT_TRUE(doomsday::is_doomsday(11, 1, 1984));
+    EXPECT_TRUE(doomsday::is_doomsday(17, 1, 2011));
+    EXPECT_TRUE(doomsday::is_doomsday(21, 2, 1986));
+    EXPECT_TRUE(doomsday::is_doomsday(22, 2, 1984));
+    EXPECT_TRUE(doomsday::is_doomsday(14, 3, 1956));
+    EXPECT_TRUE(doomsday::is_doomsday(21, 3, 1742));
+    EXPECT_TRUE(doomsday::is_doomsday(28, 3, 1954));
+    EXPECT_TRUE(doomsday::is_doomsday(11, 4, 1845));
+    EXPECT_TRUE(doomsday::is_doomsday(18, 4, 1974));
+    EXPECT_TRUE(doomsday::is_doomsday(28, 11, 1945));
+
+    EXPECT_FALSE(doomsday::is_doomsday(5, 1, 1984));
+    EXPECT_FALSE(doomsday::is_doomsday(13, 1, 2143));
+    EXPECT_FALSE(doomsday::is_doomsday(5, 2, 1935));
+    EXPECT_FALSE(doomsday::is_doomsday(7, 2, 2004));
+    EXPECT_FALSE(doomsday::is_doomsday(26, 11, 2186));
+}
