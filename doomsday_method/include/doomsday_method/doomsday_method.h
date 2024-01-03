@@ -12,6 +12,8 @@ int extract_century(int year);
 int doomsday_for_century(int century);
 int extract_year_in_century(int year);
 int doomsday_for_year(int year);
+int get_doomsday_in_month(int month, int year);
+bool is_leap_year(int year);
 
 }
 
