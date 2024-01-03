@@ -8,4 +8,8 @@
 
 namespace doomsday {
 
+int weekday(int day, int month, int year) {
+    return -1;
+}
+
 } // namespace doomsday
