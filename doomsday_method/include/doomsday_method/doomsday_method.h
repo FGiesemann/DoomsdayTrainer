@@ -8,6 +8,7 @@
 namespace doomsday {
 
 int weekday(int day, int month, int year);
+int extract_century(int year);
 
 }
 

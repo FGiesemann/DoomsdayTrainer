@@ -9,7 +9,12 @@
 namespace doomsday {
 
 int weekday(int day, int month, int year) {
+    int century = extract_century(year);
     return -1;
+}
+
+int extract_century(int year) {
+    return year / 100;
 }
 
 } // namespace doomsday
