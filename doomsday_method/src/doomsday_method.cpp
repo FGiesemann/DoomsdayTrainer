@@ -9,9 +9,7 @@
 namespace doomsday {
 
 int weekday(int day, int month, int year) {
-    int century = extract_century(year);
-    int d_c = doomsday_for_century(century);
-    int year_in_century = extract_year_in_century(year);
+    int doomsday = doomsday_for_year(year);
     return -1;
 }
 
@@ -25,6 +23,13 @@ int doomsday_for_century(int century) {
 
 int extract_year_in_century(int year) {
     return year % 100;
+}
+
+int doomsday_for_year(int year) {
+    int century = extract_century(year);
+    int d_c = doomsday_for_century(century);
+    int year_in_century = extract_year_in_century(year);
+    return (year_in_century + year_in_century / 4 + d_c) % 7;
 }
 
 } // namespace doomsday

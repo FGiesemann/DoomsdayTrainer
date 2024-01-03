@@ -25,6 +25,17 @@ TEST(DoomsdayMethod, ExtractYearInCentury) {
     EXPECT_EQ(85, doomsday::extract_year_in_century(1985));
 }
 
+TEST(DoomsdayMethod, DoomsdayForYear) {
+    EXPECT_EQ(2, doomsday::doomsday_for_year(1600));
+    EXPECT_EQ(3, doomsday::doomsday_for_year(1601));
+    EXPECT_EQ(4, doomsday::doomsday_for_year(2024));
+    EXPECT_EQ(2, doomsday::doomsday_for_year(1933));
+    EXPECT_EQ(5, doomsday::doomsday_for_year(1952));
+    EXPECT_EQ(1, doomsday::doomsday_for_year(2005));
+    EXPECT_EQ(3, doomsday::doomsday_for_year(1900));
+
+}
+
 TEST(DoomsdayMethod, Weekday) {
     EXPECT_EQ(3, doomsday::weekday( 3,  1, 2024));
     EXPECT_EQ(4, doomsday::weekday(21,  7, 2022));
