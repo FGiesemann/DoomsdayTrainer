@@ -1,6 +1,16 @@
 #include <gtest/gtest.h>
 #include <doomsday_method/doomsday_method.h>
 
+TEST(DoomsdayMethod, DoomsdayForCentury) {
+    EXPECT_EQ(5, doomsday::doomsday_for_century(18));
+    EXPECT_EQ(3, doomsday::doomsday_for_century(19));
+    EXPECT_EQ(2, doomsday::doomsday_for_century(20));
+    EXPECT_EQ(0, doomsday::doomsday_for_century(21));
+
+    EXPECT_EQ(3, doomsday::doomsday_for_century(23));
+    EXPECT_EQ(2, doomsday::doomsday_for_century(16));
+}
+
 TEST(DoomsdayMethod, ExtractCentury) {
     EXPECT_EQ(20, doomsday::extract_century(2024));
     EXPECT_EQ(21, doomsday::extract_century(2145));
