@@ -1,6 +1,14 @@
 #include <gtest/gtest.h>
 #include <doomsday_method/doomsday_method.h>
 
+TEST(DoomsdayMethod, ExtractCentury) {
+    EXPECT_EQ(20, doomsday::extract_century(2024));
+    EXPECT_EQ(21, doomsday::extract_century(2145));
+    EXPECT_EQ(16, doomsday::extract_century(1633));
+    EXPECT_EQ(17, doomsday::extract_century(1700));
+    EXPECT_EQ( 9, doomsday::extract_century( 965));
+}
+
 TEST(DoomsdayMethod, DoomsdayForCentury) {
     EXPECT_EQ(5, doomsday::doomsday_for_century(18));
     EXPECT_EQ(3, doomsday::doomsday_for_century(19));
@@ -11,12 +19,10 @@ TEST(DoomsdayMethod, DoomsdayForCentury) {
     EXPECT_EQ(2, doomsday::doomsday_for_century(16));
 }
 
-TEST(DoomsdayMethod, ExtractCentury) {
-    EXPECT_EQ(20, doomsday::extract_century(2024));
-    EXPECT_EQ(21, doomsday::extract_century(2145));
-    EXPECT_EQ(16, doomsday::extract_century(1633));
-    EXPECT_EQ(17, doomsday::extract_century(1700));
-    EXPECT_EQ( 9, doomsday::extract_century( 965));
+TEST(DoomsdayMethod, ExtractYearInCentury) {
+    EXPECT_EQ(12, doomsday::extract_year_in_century(2012));
+    EXPECT_EQ( 5, doomsday::extract_year_in_century(1905));
+    EXPECT_EQ(85, doomsday::extract_year_in_century(1985));
 }
 
 TEST(DoomsdayMethod, Weekday) {
